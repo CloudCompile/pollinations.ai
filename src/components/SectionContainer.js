@@ -57,7 +57,8 @@ export const SectionMainContent = styled.div`
   padding: 2em;
   width: 100%;
   background-color: ${Colors.offblack};
-  border-radius: 0em;
+  border-radius: 16px;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
 `;
 export const SectionTitleStyle = styled.div`
   font-size: ${(props) => props.fontSize || "8em"};

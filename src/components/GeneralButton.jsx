@@ -23,24 +23,30 @@ export const GeneralButton = React.forwardRef(function GeneralButton(
 ) {
     // Merge style props with inline styling
     const mergedStyle = {
-        border: borderColor ? `3px solid ${borderColor}` : "none",
+        border: borderColor ? `2px solid ${borderColor}` : "none",
         backgroundColor: backgroundColor || "transparent",
         color: textColor || borderColor || "transparent",
         fontSize: fontSize || "1.5em",
-        fontWeight: "normal",
+        fontWeight: 500,
         height: height || "auto",
         minHeight: height || "60px",
-        borderRadius: borderRadius || "0px",
-        padding: "0px 1em",
-        transition: "all 0.6s ease",
+        borderRadius: borderRadius || "12px",
+        padding: "0px 1.5em",
+        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         opacity: isLoading ? 0.7 : 1,
         position: "relative",
+        boxShadow: borderColor ? "0px 2px 8px rgba(0,0,0,0.15)" : "none",
         "&:hover": {
             backgroundColor: backgroundColor
-                ? `${backgroundColor}B3`
-                : "transparent", // 70% opacity
-            borderColor: borderColor ? `${borderColor}B3` : "none", // 70% opacity
-            filter: "brightness(105%)",
+                ? `${backgroundColor}dd`
+                : borderColor ? `${borderColor}18` : "transparent",
+            borderColor: borderColor || "none",
+            transform: "translateY(-2px)",
+            boxShadow: borderColor ? "0px 6px 16px rgba(0,0,0,0.25)" : "none",
+        },
+        "&:active": {
+            transform: "translateY(0px)",
+            boxShadow: borderColor ? "0px 2px 8px rgba(0,0,0,0.15)" : "none",
         },
         "&::after": isLoading
             ? {
@@ -48,10 +54,11 @@ export const GeneralButton = React.forwardRef(function GeneralButton(
                   position: "absolute",
                   bottom: 0,
                   left: 0,
-                  height: "2px",
+                  height: "3px",
                   backgroundColor: textColor || borderColor || "transparent",
                   animation: "loadingProgress 1.5s infinite ease-in-out",
                   width: "100%",
+                  borderRadius: "0 0 12px 12px",
               }
             : {},
         "@keyframes loadingProgress": {

@@ -106,7 +106,7 @@ const Hero = () => {
                 <SectionHeadlineStyle
                     maxWidth="1000px"
                     fontSize="1.8em"
-                    color={Colors.offblack}
+                    color={Colors.offwhite}
                     textAlign={isMobile ? "center" : "left"}
                 >
                     <LLMTextManipulator
@@ -126,7 +126,7 @@ const Hero = () => {
                         <SectionHeadlineStyle
                             maxWidth="1000px"
                             fontSize="1.5em"
-                            color={Colors.offblack}
+                            color={Colors.offwhite}
                             textAlign={isMobile ? "center" : "right"}
                         >
                             <LLMTextManipulator
@@ -140,9 +140,9 @@ const Hero = () => {
                         <GeneralButton
                             handleClick={handleDiscordButtonClick}
                             isLoading={false}
-                            borderColor={Colors.offblack}
-                            backgroundColor={Colors.offwhite}
-                            textColor={Colors.offblack}
+                            borderColor={Colors.lime}
+                            backgroundColor="transparent"
+                            textColor={Colors.lime}
                             style={{
                                 fontSize: "1.5rem",
                                 fontFamily: Fonts.title,
@@ -152,7 +152,7 @@ const Hero = () => {
                             <ReactSVG
                                 src={ICONS.discord}
                                 beforeInjection={(svg) => {
-                                    svg.setAttribute("fill", Colors.offblack);
+                                    svg.setAttribute("fill", Colors.lime);
                                 }}
                                 style={{
                                     width: "40px",
@@ -170,10 +170,10 @@ const Hero = () => {
                     <Grid>
                         <GeneralButton
                             handleClick={handleGithubButtonClick}
-                            borderColor={Colors.offblack}
-                            backgroundColor={Colors.offwhite}
+                            borderColor={Colors.lime}
+                            backgroundColor="transparent"
                             isLoading={false}
-                            textColor={Colors.offblack}
+                            textColor={Colors.lime}
                             style={{
                                 fontSize: "1.5rem",
                                 fontFamily: Fonts.title,
@@ -183,7 +183,7 @@ const Hero = () => {
                             <ReactSVG
                                 src={ICONS.github}
                                 beforeInjection={(svg) => {
-                                    svg.setAttribute("fill", Colors.offblack);
+                                    svg.setAttribute("fill", Colors.lime);
                                 }}
                                 style={{
                                     width: "32px",

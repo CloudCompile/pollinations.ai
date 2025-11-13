@@ -30,7 +30,7 @@ export default function News() {
     };
 
     return (
-        <SectionContainer id="news" style={{ backgroundColor: Colors.offwhite }}>
+        <SectionContainer id="news" style={{ backgroundColor: Colors.offblack2 }}>
             <Accordion
                 sx={{
                     width: "100%",

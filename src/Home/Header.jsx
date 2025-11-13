@@ -46,11 +46,11 @@ const Header = () => {
                         style={{
                             width: isMobile ? "300px" : "350px",
                             height: isMobile ? "auto" : "auto",
-                            filter: "invert(1)",
+                            filter: "brightness(0) invert(1)",
                         }}
                     />
                 </NavLink>
-                <SocialLinks medium gap="1em" invert location="header" />
+                <SocialLinks medium gap="1em" invert={true} location="header" />
             </Box>
         </SectionContainer>
     );

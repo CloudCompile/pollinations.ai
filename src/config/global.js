@@ -3,65 +3,77 @@
 export const SHOW_PROMPT_TOOLTIP = false;
 
 export const Colors = {
-    lime: "#ecf874",
-    offwhite: "#c7d4d6",
-    offblack: "#110518",
-    offblack2: "#181A2C",
-    gray1: "#B3B3B3",
-    gray2: "#8A8A8A",
-    special: "rgb(191,64,64)",
+    // Modern glassmorphic color palette
+    primary: "#A78BFA", // Purple
+    secondary: "#60A5FA", // Blue
+    accent: "#34D399", // Green
+    background: "#0F172A", // Dark slate
+    backgroundLight: "#1E293B", // Lighter slate
+    glass: "rgba(255, 255, 255, 0.05)", // Glass effect
+    glassBorder: "rgba(255, 255, 255, 0.1)",
+    textPrimary: "#F1F5F9",
+    textSecondary: "#94A3B8",
+    textMuted: "#64748B",
+    special: "#F472B6", // Pink accent
+    // Legacy colors for compatibility
+    lime: "#34D399",
+    offwhite: "#F1F5F9",
+    offblack: "#0F172A",
+    offblack2: "#1E293B",
+    gray1: "#94A3B8",
+    gray2: "#64748B",
 };
 
 export const Fonts = {
-    title: "Maven Pro",
-    headline: "Mako",
-    parameter: "Duru Sans",
+    title: "Inter, system-ui, -apple-system, sans-serif",
+    headline: "Inter, system-ui, -apple-system, sans-serif",
+    parameter: "Inter, system-ui, -apple-system, sans-serif",
 };
 
 // Step 1: Create a new mapping object for section backgrounds
 export const SectionBG = {
     header: {
-        color: "#1a1a1a",
-        gradient: false,
+        color: Colors.background,
+        gradient: true,
     },
     hero: {
-        color: "#1a1a1a",
-        gradient: false,
+        color: Colors.background,
+        gradient: true,
     },
     news: {
-        color: Colors.offblack2,
+        color: Colors.backgroundLight,
         gradient: false,
     },
     feedImage: {
-        color: Colors.offblack,
+        color: Colors.background,
         gradient: true,
     },
     feedText: {
-        color: Colors.offblack,
+        color: Colors.background,
         gradient: true,
     },
     project: {
-        color: Colors.offblack2,
+        color: Colors.backgroundLight,
         gradient: false,
     },
     integration: {
-        color: Colors.offblack,
+        color: Colors.background,
         gradient: false,
     },
     community: {
-        color: Colors.offblack2,
+        color: Colors.backgroundLight,
         gradient: true,
     },
     team: {
-        color: "#1a1a1a",
+        color: Colors.background,
         gradient: true,
     },
     supporter: {
-        color: Colors.offblack,
+        color: Colors.background,
         gradient: true,
     },
     footer: {
-        color: "#1a1a1a",
+        color: Colors.background,
         gradient: false,
     },
 };

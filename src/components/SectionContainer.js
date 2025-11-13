@@ -56,17 +56,34 @@ export const SectionMainContent = styled.div`
   align-items: center;
   padding: 2em;
   width: 100%;
-  background-color: ${Colors.offblack};
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 48px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
 `;
 export const SectionTitleStyle = styled.div`
   font-size: ${(props) => props.fontSize || "8em"};
-  color: ${(props) => props.color || Colors.lime};
+  color: ${(props) => props.color || Colors.primary};
   font-family: ${Fonts.title};
-  letter-spacing: 0.1em;
+  font-weight: 800;
+  letter-spacing: -0.02em;
   line-height: 1em;
   text-align: center;
+  background: linear-gradient(135deg, ${Colors.primary} 0%, ${Colors.secondary} 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
   ${({ theme }) => theme.breakpoints.down("md")} {
     font-size: ${(props) => props.fontSize || "4em"};
   }
@@ -75,9 +92,11 @@ export const SectionTitleStyle = styled.div`
 export const SectionHeadlineStyle = styled.div`
   font-size: ${(props) => props.fontSize || "1.5em"};
   max-width: ${(props) => props.maxWidth || "750px"};
-  color: ${(props) => props.color || Colors.offwhite};
+  color: ${(props) => props.color || Colors.textPrimary};
   font-family: ${Fonts.headline};
   font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
   text-align: ${(props) => props.textAlign || "center"};
   justify-content: ${(props) => props.justifyContent || "center"};
   ${({ theme }) => theme.breakpoints.down("md")} {

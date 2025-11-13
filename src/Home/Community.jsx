@@ -106,10 +106,10 @@ const Community = () => {
     return (
         <SectionContainer backgroundConfig={SectionBG.community}>
             <SectionSubContainer>
-                <SectionTitle title={COMMUNITY_TITLE} color={Colors.lime} />
+                <SectionTitle title={COMMUNITY_TITLE} color={Colors.accent} variant="green" />
             </SectionSubContainer>
             <SectionSubContainer>
-                <SectionHeadlineStyle color={Colors.offwhite}>
+                <SectionHeadlineStyle color={Colors.textPrimary}>
                     <LLMTextManipulator
                         text={COMMUNITY_SUBTITLE}
                         transforms={[rephrase, responsive, emojify, noLink]}
@@ -140,10 +140,10 @@ const Community = () => {
                                             platform.buttonClickHandler
                                         }
                                         isLoading={false}
-                                        backgroundColor={Colors.offblack}
-                                        textColor={Colors.offwhite}
+                                        backgroundColor="transparent"
+                                        textColor={Colors.accent}
                                         fontSize={isXs ? "1.5em" : "2.5em"}
-                                        borderColor={Colors.offwhite}
+                                        borderColor={Colors.accent}
                                         style={{ fontFamily: Fonts.parameter }}
                                     >
                                         <ReactSVG
@@ -153,7 +153,7 @@ const Community = () => {
                                             beforeInjection={(svg) => {
                                                 svg.setAttribute(
                                                     "fill",
-                                                    Colors.offwhite,
+                                                    Colors.accent,
                                                 );
                                             }}
                                             style={{

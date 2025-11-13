@@ -56,19 +56,58 @@ export const SectionMainContent = styled.div`
   align-items: center;
   padding: 2em;
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'solid') return 'rgba(30, 41, 59, 0.8)';
+    if (variant === 'light') return 'rgba(255, 255, 255, 0.03)';
+    if (variant === 'gradient') return `linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%)`;
+    return 'rgba(255, 255, 255, 0.05)';
+  }};
+  backdrop-filter: ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'solid') return 'blur(20px)';
+    if (variant === 'light') return 'blur(5px)';
+    return 'blur(10px)';
+  }};
+  -webkit-backdrop-filter: ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'solid') return 'blur(20px)';
+    if (variant === 'light') return 'blur(5px)';
+    return 'blur(10px)';
+  }};
+  border: 1px solid ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'gradient') return 'rgba(167, 139, 250, 0.2)';
+    return 'rgba(255, 255, 255, 0.1)';
+  }};
+  border-radius: ${(props) => props.borderRadius || '16px'};
+  box-shadow: ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'solid') return '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+    if (variant === 'light') return '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)';
+    return '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+  }};
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   &:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.15);
+    background: ${(props) => {
+      const variant = props.variant || 'default';
+      if (variant === 'solid') return 'rgba(30, 41, 59, 0.9)';
+      if (variant === 'light') return 'rgba(255, 255, 255, 0.05)';
+      if (variant === 'gradient') return `linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%)`;
+      return 'rgba(255, 255, 255, 0.08)';
+    }};
+    border-color: ${(props) => {
+      const variant = props.variant || 'default';
+      if (variant === 'gradient') return 'rgba(167, 139, 250, 0.4)';
+      return 'rgba(255, 255, 255, 0.15)';
+    }};
     transform: translateY(-2px);
-    box-shadow: 0 12px 48px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    box-shadow: ${(props) => {
+      const variant = props.variant || 'default';
+      if (variant === 'gradient') return '0 12px 48px rgba(167, 139, 250, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+      return '0 12px 48px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+    }};
   }
 `;
 export const SectionTitleStyle = styled.div`
@@ -79,11 +118,23 @@ export const SectionTitleStyle = styled.div`
   letter-spacing: -0.02em;
   line-height: 1em;
   text-align: center;
-  background: linear-gradient(135deg, ${Colors.primary} 0%, ${Colors.secondary} 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 4px 12px rgba(167, 139, 250, 0.3);
+  background: ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'green') return `linear-gradient(135deg, ${Colors.accent} 0%, ${Colors.secondary} 100%)`;
+    if (variant === 'blue') return `linear-gradient(135deg, ${Colors.secondary} 0%, ${Colors.primary} 100%)`;
+    if (variant === 'solid') return 'none';
+    return `linear-gradient(135deg, ${Colors.primary} 0%, ${Colors.secondary} 100%)`;
+  }};
+  -webkit-background-clip: ${(props) => props.variant === 'solid' ? 'unset' : 'text'};
+  -webkit-text-fill-color: ${(props) => props.variant === 'solid' ? 'unset' : 'transparent'};
+  background-clip: ${(props) => props.variant === 'solid' ? 'unset' : 'text'};
+  text-shadow: ${(props) => {
+    const variant = props.variant || 'default';
+    if (variant === 'solid') return 'none';
+    if (variant === 'green') return '0 4px 12px rgba(52, 211, 153, 0.3)';
+    if (variant === 'blue') return '0 4px 12px rgba(96, 165, 250, 0.3)';
+    return '0 4px 12px rgba(167, 139, 250, 0.3)';
+  }};
   ${({ theme }) => theme.breakpoints.down("md")} {
     font-size: ${(props) => props.fontSize || "4em"};
   }

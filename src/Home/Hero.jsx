@@ -140,9 +140,9 @@ const Hero = () => {
                         <GeneralButton
                             handleClick={handleDiscordButtonClick}
                             isLoading={false}
-                            borderColor={Colors.lime}
+                            borderColor={Colors.secondary}
                             backgroundColor="transparent"
-                            textColor={Colors.lime}
+                            textColor={Colors.secondary}
                             style={{
                                 fontSize: "1.5rem",
                                 fontFamily: Fonts.title,
@@ -152,7 +152,7 @@ const Hero = () => {
                             <ReactSVG
                                 src={ICONS.discord}
                                 beforeInjection={(svg) => {
-                                    svg.setAttribute("fill", Colors.lime);
+                                    svg.setAttribute("fill", Colors.secondary);
                                 }}
                                 style={{
                                     width: "40px",
@@ -170,10 +170,10 @@ const Hero = () => {
                     <Grid>
                         <GeneralButton
                             handleClick={handleGithubButtonClick}
-                            borderColor={Colors.lime}
+                            borderColor={Colors.accent}
                             backgroundColor="transparent"
                             isLoading={false}
-                            textColor={Colors.lime}
+                            textColor={Colors.accent}
                             style={{
                                 fontSize: "1.5rem",
                                 fontFamily: Fonts.title,
@@ -183,7 +183,7 @@ const Hero = () => {
                             <ReactSVG
                                 src={ICONS.github}
                                 beforeInjection={(svg) => {
-                                    svg.setAttribute("fill", Colors.lime);
+                                    svg.setAttribute("fill", Colors.accent);
                                 }}
                                 style={{
                                     width: "32px",

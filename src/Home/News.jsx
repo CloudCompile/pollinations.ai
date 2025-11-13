@@ -51,11 +51,13 @@ export default function News() {
                 <AccordionSummary
                     sx={{
                         padding: "0.5em 2em",
-                        backgroundColor: Colors.special,
+                        background: `linear-gradient(135deg, ${Colors.primary} 0%, ${Colors.secondary} 100%)`,
                         "&:hover": {
-                            backgroundColor: `${Colors.special}99`,
+                            background: `linear-gradient(135deg, ${Colors.primary}dd 0%, ${Colors.secondary}dd 100%)`,
+                            transform: "translateY(-1px)",
                         },
                         borderRadius: "0em",
+                        transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
                         "&.Mui-expanded": {
                             borderBottomLeftRadius: 0,
                             borderBottomRightRadius: 0,

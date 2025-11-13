@@ -53,9 +53,9 @@ export const Integration = () => {
                 <GeneralButton
                     handleClick={handleGithubButtonClick}
                     isLoading={false}
-                    backgroundColor={Colors.offblack2}
-                    textColor={Colors.offwhite}
-                    borderColor={Colors.offwhite}
+                    backgroundColor="transparent"
+                    textColor={Colors.accent}
+                    borderColor={Colors.accent}
                     style={{
                         fontSize: "1.5rem",
                         fontFamily: Fonts.title,
@@ -65,7 +65,7 @@ export const Integration = () => {
                     <ReactSVG
                         src={ICONS.github}
                         beforeInjection={(svg) => {
-                            svg.setAttribute("fill", Colors.offwhite);
+                            svg.setAttribute("fill", Colors.accent);
                         }}
                         style={{
                             width: "32px",

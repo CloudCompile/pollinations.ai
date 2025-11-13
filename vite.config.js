@@ -5,6 +5,7 @@ import svgr from 'vite-plugin-svgr'
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths(), svgr()],
+  base: process.env.GITHUB_PAGES ? '/pollinations.ai/' : '/',
   server: {
     open: true
   },

@@ -58,55 +58,78 @@ export const SectionMainContent = styled.div`
   width: 100%;
   background: ${(props) => {
     const variant = props.variant || 'default';
-    if (variant === 'solid') return 'rgba(30, 41, 59, 0.8)';
-    if (variant === 'light') return 'rgba(255, 255, 255, 0.03)';
-    if (variant === 'gradient') return `linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(96, 165, 250, 0.1) 100%)`;
-    return 'rgba(255, 255, 255, 0.05)';
+    if (variant === 'solid') return 'linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(30, 41, 59, 0.85) 100%)';
+    if (variant === 'light') return 'linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%)';
+    if (variant === 'gradient') return `linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(96, 165, 250, 0.12) 100%)`;
+    return 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%)';
   }};
   backdrop-filter: ${(props) => {
     const variant = props.variant || 'default';
-    if (variant === 'solid') return 'blur(20px)';
-    if (variant === 'light') return 'blur(5px)';
-    return 'blur(10px)';
+    if (variant === 'solid') return 'blur(30px) saturate(180%)';
+    if (variant === 'light') return 'blur(15px) saturate(150%)';
+    return 'blur(20px) saturate(180%)';
   }};
   -webkit-backdrop-filter: ${(props) => {
     const variant = props.variant || 'default';
-    if (variant === 'solid') return 'blur(20px)';
-    if (variant === 'light') return 'blur(5px)';
-    return 'blur(10px)';
+    if (variant === 'solid') return 'blur(30px) saturate(180%)';
+    if (variant === 'light') return 'blur(15px) saturate(150%)';
+    return 'blur(20px) saturate(180%)';
   }};
   border: 1px solid ${(props) => {
     const variant = props.variant || 'default';
-    if (variant === 'gradient') return 'rgba(167, 139, 250, 0.2)';
-    return 'rgba(255, 255, 255, 0.1)';
+    if (variant === 'gradient') return 'rgba(167, 139, 250, 0.3)';
+    return 'rgba(255, 255, 255, 0.15)';
   }};
-  border-radius: ${(props) => props.borderRadius || '16px'};
+  border-radius: ${(props) => props.borderRadius || '24px'};
   box-shadow: ${(props) => {
     const variant = props.variant || 'default';
-    if (variant === 'solid') return '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
-    if (variant === 'light') return '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05)';
-    return '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)';
+    if (variant === 'solid') return '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1)';
+    if (variant === 'light') return '0 4px 16px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.05)';
+    return '0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2), inset 0 -1px 0 rgba(0, 0, 0, 0.1)';
   }};
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    opacity: 0.6;
+  }
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.2), transparent);
+  }
   
   &:hover {
     background: ${(props) => {
       const variant = props.variant || 'default';
-      if (variant === 'solid') return 'rgba(30, 41, 59, 0.9)';
-      if (variant === 'light') return 'rgba(255, 255, 255, 0.05)';
-      if (variant === 'gradient') return `linear-gradient(135deg, rgba(167, 139, 250, 0.15) 0%, rgba(96, 165, 250, 0.15) 100%)`;
-      return 'rgba(255, 255, 255, 0.08)';
+      if (variant === 'solid') return 'linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%)';
+      if (variant === 'light') return 'linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%)';
+      if (variant === 'gradient') return `linear-gradient(135deg, rgba(167, 139, 250, 0.2) 0%, rgba(96, 165, 250, 0.15) 100%)`;
+      return 'linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%)';
     }};
     border-color: ${(props) => {
       const variant = props.variant || 'default';
-      if (variant === 'gradient') return 'rgba(167, 139, 250, 0.4)';
-      return 'rgba(255, 255, 255, 0.15)';
+      if (variant === 'gradient') return 'rgba(167, 139, 250, 0.5)';
+      return 'rgba(255, 255, 255, 0.25)';
     }};
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.01);
     box-shadow: ${(props) => {
       const variant = props.variant || 'default';
-      if (variant === 'gradient') return '0 12px 48px rgba(167, 139, 250, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
-      return '0 12px 48px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.15)';
+      if (variant === 'gradient') return '0 12px 48px rgba(167, 139, 250, 0.3), 0 0 20px rgba(167, 139, 250, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.25)';
+      return '0 12px 48px rgba(167, 139, 250, 0.2), 0 0 20px rgba(167, 139, 250, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.25)';
     }};
   }
 `;

@@ -61,7 +61,7 @@ export const SectionBG = {
         gradient: true,
     },
     footer: {
-        color: Colors.offwhite,
+        color: "#1a1a1a",
         gradient: false,
     },
 };

@@ -18,6 +18,10 @@ export const NEWS_TITLE = "**Last update**" + newsList.split("\n")[0];
 
 export const NEWS_LIST = newsList.split("\n").slice(1).join("\n");
 
+export const CHAT_TITLE = "Chat";
+export const CHAT_SUBTITLE = "Experience our conversational AI interface. Chat with advanced models, generate images, and explore AI capabilities in a user-friendly chat environment.";
+export const CHAT_CTA = "Try Chat.Pollinations.AI";
+
 export const IMAGE_FEED_SUBTITLE = "See what others are creating in real-time";
 
 export const IMAGE_FEED_TITLE = "Image Feed";

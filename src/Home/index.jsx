@@ -10,6 +10,7 @@ import { ImageContext } from "../utils/ImageContext";
 import Discord from "./Community";
 import Supporter from "./Supporter";
 import News from "./News";
+import Chat from "./Chat.jsx";
 
 export default function Home() {
     const [image, setImage] = useState(null);
@@ -18,6 +19,7 @@ export default function Home() {
         <ImageContext.Provider value={{ image, setImage }}>
             <Style>
                 <Hero />
+                <Chat />
                 <Feeds />
                 <Integration />
                 <Projects />

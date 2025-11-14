@@ -1,4 +1,5 @@
-export const newsList = `- **2025-08-24** – **Sequa AI Integration** now available! [Sequa.AI](https://sequa.ai) is a contextual knowledge engine that provides AI assistants with deep, real-time understanding of codebases and documentation. Configure MCP for Pollinations: \`https://mcp.sequa.ai/v1/pollinations/contribute\` | [Learn more](https://sequa.ai).
+export const newsList = `- **2025-11-14** – **Chat.Pollinations.AI** now live! Experience our new conversational AI interface at [chat.pollinations.ai](https://chat.pollinations.ai) - chat with advanced AI models powered by our API.
+- **2025-08-24** – **Sequa AI Integration** now available! [Sequa.AI](https://sequa.ai) is a contextual knowledge engine that provides AI assistants with deep, real-time understanding of codebases and documentation. Configure MCP for Pollinations: \`https://mcp.sequa.ai/v1/pollinations/contribute\` | [Learn more](https://sequa.ai).
 - **2025-07-04** – **Flux Kontext Model** now available! General-purpose image-to-image generation model supporting transformations and variations. Use with \`?model=kontext&image=URL\`.
 - **2025-05-28** – New Auth Dashboard! Visit [auth.pollinations.ai](https://auth.pollinations.ai) to manage API tokens and referrer domains. [Learn more](https://github.com/pollinations/pollinations/blob/main/APIDOCS.md#authentication-).
 - **2025-04-12** – New **Text Feed** section added to the website. View real-time text generations and test text API endpoints directly from the site.
@@ -9,5 +10,5 @@ export const newsList = `- **2025-08-24** – **Sequa AI Integration** now avail
 - **2025-03-05** - New audio features! Text-to-speech and speech-to-text capabilities are now available with the \`openai-audio\` model. Check the [API Docs](https://github.com/pollinations/pollinations/blob/main/APIDOCS.md).
 - **2025-02-05** - Introducing [Pollinations.DIY](https://pollinations.diy) - A browser-based development environment for building AI-powered applications with Pollinations services, based on bolt.diy!
 - **2025-02-05** - New Gemini 2.0 Flash and Gemini 2.0 Flash Thinking models are now available on [text.pollinations.ai/models](https://text.pollinations.ai/models)!
-- **2025-01-25** - New lightning fast Flux.Schnell backend thanks to Cloudfare (for details on cloudflare check https://developers.cloudflare.com/workers-ai/)
+- **2025-01-25** - New lightning fast Flux.Schnell backend thanks to Cloudflare (for details on cloudflare check https://developers.cloudflare.com/workers-ai/)
 - **2025-01-05** - Want a new feature? Create a [GitHub issue](https://github.com/pollinations/pollinations/issues/new) and our [AI assistant](https://mentat.ai/) will implement it!`;

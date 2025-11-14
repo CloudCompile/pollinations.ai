@@ -44,6 +44,10 @@ export const SectionBG = {
         color: Colors.backgroundLight,
         gradient: false,
     },
+    chat: {
+        color: Colors.background,
+        gradient: true,
+    },
     feedImage: {
         color: Colors.background,
         gradient: true,

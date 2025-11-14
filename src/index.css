@@ -1,39 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 :root {
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  line-height: 1.6;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: dark;
-  color: #F1F5F9;
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-  scroll-behavior: smooth;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 a {
   font-weight: 500;
-  color: #60A5FA;
-  text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #646cff;
+  text-decoration: inherit;
 }
-
 a:hover {
-  color: #A78BFA;
-  text-decoration: none;
-  text-shadow: 0 0 20px rgba(167, 139, 250, 0.5);
+  color: #535bf2;
 }
 
 body {
@@ -42,151 +28,41 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Liquid glass background pattern with animated gradients */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(167, 139, 250, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(96, 165, 250, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 40% 20%, rgba(52, 211, 153, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 60% 60%, rgba(244, 114, 182, 0.08) 0%, transparent 50%);
-  pointer-events: none;
-  z-index: 0;
-  animation: liquidFlow 20s ease-in-out infinite;
-}
-
-@keyframes liquidFlow {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    opacity: 0.8;
-    transform: scale(1.1) rotate(2deg);
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.2;
-  font-weight: 800;
-  background: linear-gradient(135deg, #A78BFA 0%, #60A5FA 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  line-height: 1.1;
 }
 
 button {
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 0.75em 1.5em;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: 'Inter', system-ui, sans-serif;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  color: #F1F5F9;
+  font-family: inherit;
+  background-color: #1a1a1a;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
+  transition: border-color 0.25s;
 }
-
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-button:hover::before {
-  left: 100%;
-}
-
 button:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
-  border-color: rgba(167, 139, 250, 0.6);
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 
-    0 12px 40px rgba(167, 139, 250, 0.25),
-    0 0 20px rgba(167, 139, 250, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  border-color: #646cff;
 }
-
-button:active {
-  transform: translateY(-1px) scale(0.98);
-  box-shadow: 
-    0 4px 16px rgba(0, 0, 0, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
 button:focus,
 button:focus-visible {
-  outline: 2px solid rgba(167, 139, 250, 0.5);
-  outline-offset: 3px;
-  box-shadow: 
-    0 0 0 4px rgba(167, 139, 250, 0.1),
-    0 12px 40px rgba(167, 139, 250, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  outline: 4px auto -webkit-focus-ring-color;
 }
 
-/* Liquid glass card/panel styling */
-.glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 24px;
-  box-shadow: 
-    0 8px 32px rgba(0, 0, 0, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-}
-
-.glass:hover {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 
-    0 12px 48px rgba(0, 0, 0, 0.25),
-    0 0 20px rgba(167, 139, 250, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.25),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
 }

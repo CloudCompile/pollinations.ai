@@ -1,7 +1,5 @@
 import styled from "@emotion/styled";
 import { Colors, Fonts } from "../config/global";
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 
 export const SectionContainer = styled.div`
   width: 100%;

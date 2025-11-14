@@ -51,7 +51,6 @@ export function ModelSelector({
     const {
         models,
         loading: modelsLoading,
-        error: modelsError,
     } = useModels(itemType);
 
     // Handle toggle

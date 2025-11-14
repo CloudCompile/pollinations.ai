@@ -18,12 +18,12 @@ export default function Home() {
         <ImageContext.Provider value={{ image, setImage }}>
             <Style>
                 <Hero />
-                <News />
                 <Feeds />
-                <Projects />
                 <Integration />
+                <Projects />
                 <Discord />
                 <Supporter />
+                <News />
             </Style>
         </ImageContext.Provider>
     );

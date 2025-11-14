@@ -17,26 +17,36 @@ const SocialLinksContainer = styled("div")(({ gap }) => ({
 const LinkItem = styled(Link, {
     // Prevent forwarding isHovered to the DOM
     shouldForwardProp: (prop) => !["isHovered", "invert"].includes(prop),
-})(({ isHovered }) => ({
+})(({ isHovered, invert }) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: "50%",
-    border: `2px solid ${Colors.offblack}`,
-    backgroundColor: isHovered ? Colors.offblack : "transparent",
+    border: `2px solid ${invert ? Colors.offwhite : Colors.offblack}`,
+    backgroundColor: isHovered 
+        ? (invert ? Colors.offwhite : Colors.offblack)
+        : "transparent",
     width: "40px",
     height: "40px",
-    transition: "all 0.6s ease",
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
     textDecoration: "none",
+    "&:hover": {
+        transform: "translateY(-2px)",
+        boxShadow: invert 
+            ? "0px 4px 12px rgba(255, 255, 255, 0.2)"
+            : "0px 4px 12px rgba(0, 0, 0, 0.2)",
+    },
 }));
 
 // Replacing the <img> with a Styled ReactSVG to control the svg fill dynamically
 const StyledReactSVG = styled(ReactSVG, {
     shouldForwardProp: (prop) => !["isHovered", "invert"].includes(prop),
-})(({ isHovered }) => ({
+})(({ isHovered, invert }) => ({
     "& svg": {
-        fill: isHovered ? Colors.offwhite : Colors.offblack,
-        transition: "fill 0.6s ease",
+        fill: isHovered 
+            ? (invert ? Colors.offblack : Colors.offwhite)
+            : (invert ? Colors.offwhite : Colors.offblack),
+        transition: "fill 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
         width: "100%",
         height: "100%",
     },

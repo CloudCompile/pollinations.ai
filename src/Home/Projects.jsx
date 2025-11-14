@@ -72,22 +72,22 @@ const Projects = () => {
 
     const getButtonBackgroundColor = (categoryKey) => {
         if (selectedCategory !== categoryKey) {
-            return Colors.offblack;
+            return "transparent";
         }
-        return Colors.lime;
+        return `linear-gradient(135deg, ${Colors.secondary} 0%, ${Colors.primary} 100%)`;
     };
 
     const getButtonTextColor = (categoryKey) => {
         if (selectedCategory === categoryKey) {
-            return Colors.offblack;
+            return Colors.textPrimary;
         }
-        return Colors.lime;
+        return Colors.secondary;
     };
 
     return (
         <SectionContainer id="projects" backgroundConfig={SectionBG.project}>
             <SectionSubContainer>
-                <SectionTitle title={PROJECT_TITLE} />
+                <SectionTitle title={PROJECT_TITLE} variant="blue" />
             </SectionSubContainer>
 
             <SectionSubContainer>
@@ -102,10 +102,10 @@ const Projects = () => {
                 <Box sx={{ width: "auto", height: "100px" }}>
                     <GeneralButton
                         handleClick={handleSubmitButtonClick}
-                        textColor={Colors.offwhite}
-                        borderColor={Colors.offwhite}
+                        textColor={Colors.secondary}
+                        borderColor={Colors.secondary}
                         fontSize="2em"
-                        backgroundColor={Colors.offblack}
+                        backgroundColor="transparent"
                         style={{
                             fontSize: "1.5rem",
                             fontFamily: Fonts.title,

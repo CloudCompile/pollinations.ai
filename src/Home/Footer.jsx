@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
+import { Box, Typography, Link } from "@mui/material";
 import { SocialLinks } from "../components/SocialLinks";
-import { Fonts, SectionBG } from "../config/global";
+import { Fonts, SectionBG, Colors } from "../config/global";
 import StyledLink from "../components/StyledLink";
 import { SectionContainer } from "../components/SectionContainer";
 import Grid from "@mui/material/Grid2";
@@ -16,6 +16,7 @@ import { useTheme } from "@mui/material/styles";
 import { useMediaQuery } from "@mui/material";
 import { copyToClipboard } from "../utils/clipboard.js";
 import { useState } from "react";
+import PollinationsLogo from "../logo/logo-text.svg?react";
 
 const Footer = () => {
     const theme = useTheme();
@@ -45,85 +46,211 @@ const Footer = () => {
         });
     };
 
+    const footerLinks = {
+        explore: [
+            { label: "Generate", href: "#" },
+            { label: "API Docs", href: "/integrate" },
+            { label: "Our Models", href: "#" },
+            { label: "Status", href: "#" },
+        ],
+        company: [
+            { label: "Blog", href: "#" },
+            { label: "Careers", href: "#" },
+            { label: "Contact", href: "mailto:hello@pollinations.ai", onClick: handleEmailLinkClick },
+        ],
+    };
+
     return (
         <SectionContainer backgroundConfig={SectionBG.footer}>
             <Box
                 width="100%"
                 display="flex"
-                flexDirection={isMdDown ? "column" : "row"}
-                justifyContent="space-between"
-                padding="1em"
-                gap="2em"
-                marginBottom="4em"
+                flexDirection="column"
+                padding={isMdDown ? "2em 1em" : "3em 2em"}
+                gap="3em"
+                sx={{
+                    color: Colors.offwhite,
+                }}
             >
-                <Grid
-                    size={{ xs: 12, md: 6 }}
+                {/* Logo and Social Links Row */}
+                <Grid container spacing={isMdDown ? 2 : 4}>
+                    <Grid size={{ xs: 12, md: 6 }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1.5em",
+                                alignItems: isMdDown ? "center" : "flex-start",
+                            }}
+                        >
+                            <PollinationsLogo
+                                style={{
+                                    width: isMdDown ? "200px" : "250px",
+                                    height: "auto",
+                                    filter: "brightness(0) invert(1)",
+                                }}
+                            />
+                        </Box>
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 6 }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                justifyContent: isMdDown ? "center" : "flex-end",
+                                alignItems: "center",
+                                height: "100%",
+                            }}
+                        >
+                            <SocialLinks gap="1em" location="footer" invert={true} />
+                        </Box>
+                    </Grid>
+                </Grid>
+
+                {/* Links Section */}
+                <Grid container spacing={isMdDown ? 3 : 4}>
+                    <Grid size={{ xs: 12, md: 3 }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1em",
+                                alignItems: isMdDown ? "center" : "flex-start",
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontFamily: Fonts.title,
+                                    fontWeight: 600,
+                                    color: Colors.offwhite,
+                                    marginBottom: "0.5em",
+                                }}
+                            >
+                                Explore
+                            </Typography>
+                            {footerLinks.explore.map((link, index) => (
+                                <Link
+                                    key={index}
+                                    href={link.href}
+                                    onClick={link.onClick}
+                                    sx={{
+                                        color: Colors.gray1,
+                                        textDecoration: "none",
+                                        fontFamily: Fonts.parameter,
+                                        fontSize: "1rem",
+                                        transition: "color 0.3s ease",
+                                        "&:hover": {
+                                            color: Colors.lime,
+                                        },
+                                    }}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </Box>
+                    </Grid>
+                    <Grid size={{ xs: 12, md: 3 }}>
+                        <Box
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                gap: "1em",
+                                alignItems: isMdDown ? "center" : "flex-start",
+                            }}
+                        >
+                            <Typography
+                                variant="h6"
+                                sx={{
+                                    fontFamily: Fonts.title,
+                                    fontWeight: 600,
+                                    color: Colors.offwhite,
+                                    marginBottom: "0.5em",
+                                }}
+                            >
+                                Company
+                            </Typography>
+                            {footerLinks.company.map((link, index) => (
+                                <Link
+                                    key={index}
+                                    href={link.href}
+                                    onClick={link.onClick}
+                                    sx={{
+                                        color: Colors.gray1,
+                                        textDecoration: "none",
+                                        fontFamily: Fonts.parameter,
+                                        fontSize: "1rem",
+                                        transition: "color 0.3s ease",
+                                        "&:hover": {
+                                            color: Colors.lime,
+                                        },
+                                    }}
+                                >
+                                    {link.label}
+                                </Link>
+                            ))}
+                        </Box>
+                    </Grid>
+                </Grid>
+
+                {/* Bottom Section */}
+                <Box
                     sx={{
+                        borderTop: `1px solid ${Colors.gray2}40`,
+                        paddingTop: "2em",
                         display: "flex",
-                        flexDirection: "column",
-                        alignItems: isMdDown ? "center" : "flex-start",
+                        flexDirection: isMdDown ? "column" : "row",
+                        justifyContent: "space-between",
+                        alignItems: isMdDown ? "center" : "center",
                         gap: "1em",
                     }}
                 >
-                    <Box sx={{ fontSize: "1.5em", fontFamily: Fonts.title }}>
-                        <StyledLink
-                            isExternal
-                            onClick={handleEmailLinkClick}
-                            href="mailto:hello@pollinations.ai"
-                            sx={{ userSelect: "text" }}
-                        >
-                            {copied
-                                ? <b>Copied! ✅</b>
-                                : <b>hello@pollinations.ai</b>}
-                        </StyledLink>
-                    </Box>
-                    <Box>
-                        <SocialLinks gap="1em" location="footer" />
-                    </Box>
-                </Grid>
-                <Grid
-                    size={{ xs: 12, md: 6 }}
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "flex-end",
-                        marginTop: isMdDown ? "1em" : "0em",
-                        alignItems: isMdDown ? "center" : "flex-end",
-                    }}
-                >
-                    <Box
-                        height="100%"
-                        sx={{ fontSize: "1.5em", fontFamily: Fonts.title }}
-                    >
-                        <StyledLink 
-                            to="/terms" 
-                            onClick={handleTermsLinkClick}
-                        >
-                            <LLMTextManipulator
-                                text={FOOTER_TERMS_CONDITIONS_LINK}
-                                transforms={[noLink]}
-                            />
-                        </StyledLink>
-                    </Box>
                     <Box
                         sx={{
-                            fontSize: "1.2em",
-                            fontFamily: Fonts.title,
-                            width: "100%",
-                            textAlign: isMdDown ? "center" : "right",
-                            marginTop: "0.5em",
+                            display: "flex",
+                            flexDirection: isMdDown ? "column" : "row",
+                            alignItems: "center",
+                            gap: isMdDown ? "0.5em" : "0.5em",
+                            color: Colors.gray1,
+                            fontFamily: Fonts.parameter,
+                            fontSize: "0.9rem",
+                            textAlign: isMdDown ? "center" : "left",
                         }}
                     >
                         <LLMTextManipulator
                             text={FOOTER_INFO_1}
                             transforms={[noLink]}
                         />
+                        <Box
+                            component="span"
+                            sx={{ display: isMdDown ? "none" : "inline" }}
+                        >
+                            •
+                        </Box>
                         <LLMTextManipulator
                             text={FOOTER_INFO_2}
                             transforms={[noLink]}
                         />
                     </Box>
-                </Grid>
+                    <StyledLink
+                        to="/terms"
+                        onClick={handleTermsLinkClick}
+                        sx={{
+                            color: Colors.gray1,
+                            textDecoration: "none",
+                            fontFamily: Fonts.parameter,
+                            fontSize: "0.9rem",
+                            transition: "color 0.3s ease",
+                            "&:hover": {
+                                color: Colors.lime,
+                            },
+                        }}
+                    >
+                        <LLMTextManipulator
+                            text={FOOTER_TERMS_CONDITIONS_LINK}
+                            transforms={[noLink]}
+                        />
+                    </StyledLink>
+                </Box>
             </Box>
         </SectionContainer>
     );

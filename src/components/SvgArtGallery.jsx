@@ -180,28 +180,28 @@ const presets = {
         prompt: "Create patterns inspired by morphogenetic fields using repeating cellular elements. Generate groups of similar cell-like forms that can tile seamlessly. Add subtle growth animations that maintain pattern organization. Focus on developmental-like processes.",
         temperature: 0.85,
     },
-    neural: {
-        name: "Neural Networks",
+    neuralDense: {
+        name: "Neural Networks Dense",
         prompt: "Create a dense, space-filling network pattern using only black, white, and lime (#FFE801). Define a reusable group of interconnected nodes and paths that can be repeated and rotated. Fill the entire space with multiple scales of this pattern, creating a self-similar neural network. Use black for main structures, lime for highlights, and white for background. Add subtle pulse animations that propagate through the connections. Use at least 50 instances of the base pattern.",
         temperature: 0.7,
     },
-    biomorphic: {
-        name: "Biomorphic Systems",
+    biomorphicDense: {
+        name: "Biomorphic Systems Dense",
         prompt: "Generate a dense biological pattern system using only black, white, and lime (#FFE801). Define a reusable group of organic shapes that can grow and divide. Use black for primary forms, lime for accent elements, and white for negative space. Fill the entire canvas with this pattern at multiple scales, creating a self-similar living texture. Include at least 100 instances of the base pattern. Add subtle growth animations that maintain the dense coverage.",
         temperature: 0.8,
     },
-    hexGrid: {
-        name: "Hex Grid Flow",
+    hexGridDense: {
+        name: "Hex Grid Flow Dense",
         prompt: "Create a dense hexagonal grid system using only black, white, and lime (#FFE801). Define a reusable hexagon group with internal geometric patterns. Use black for grid lines, lime for selected hexagons, and white for background. Fill the entire space with at least 200 hexagons at different scales. Create a self-similar pattern where each hexagon contains smaller hexagons. Add wave-like animations that ripple through the entire grid structure.",
         temperature: 0.7,
     },
-    voronoiTessellation: {
-        name: "Voronoi Mesh",
+    voronoiTessellationDense: {
+        name: "Voronoi Mesh Dense",
         prompt: "Generate a dense Voronoi tessellation using only black, white, and lime (#FFE801). Define a reusable group of cells with internal patterns that can be reflected and rotated. Use black for primary cells, lime for accent elements, and white for background. Fill the entire space with at least 150 cells at multiple scales. Create a self-similar pattern where each cell contains smaller cells. Add subtle pulsing animations that spread across the mesh.",
         temperature: 0.75,
     },
-    circuitryMesh: {
-        name: "Circuit Matrix",
+    circuitryMeshDense: {
+        name: "Circuit Matrix Dense",
         prompt: "Design a dense circuit pattern system using only black, white, and lime (#FFE801). Define a reusable group of circuit paths and nodes that can be rotated and connected. Use black for primary circuits, lime for active nodes, and white for background. Fill the entire space with at least 300 circuit elements at different scales. Create a self-similar pattern where each circuit contains smaller circuits. Add data-flow animations that traverse the entire network.",
         temperature: 0.7,
     },
